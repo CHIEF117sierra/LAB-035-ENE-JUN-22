@@ -9,21 +9,21 @@ import { GastosService } from '../services/gastos.service';
 })
 export class PresupuestoPage implements OnInit {
 
+  
   public gastos: string[]=['Directos','Fijos', 'Variables'];
   public selectedValue: any;
   public monto: number;
-  public resultados: string;
-  public errResultados: string='light';
-  
   public gasotsList: Gasto[]=[];
+  public resultados: string;
   public descripcion: string;
-  public tipoGasto: string='';
+  public errResultados: string='light';
 
-  constructor(private gastosService: GastosService) {
-    
-   }
+  constructor(private gastosService: GastosService) { }
 
-   customPopoverOptions: any = {
+  ngOnInit() {
+  }
+
+  customPopoverOptions: any = {
     header: 'Seleccion de gasots',
     subHeader: 'Seleccione el tipo de gasto',
     message: 'Solo seleccione un tipo de gasto'
@@ -57,8 +57,5 @@ export class PresupuestoPage implements OnInit {
     this.gastosService.borrarGasto(idGasto);
     this.gasotsList = this.gastosService.getGastos();
   }
-
-  ngOnInit() {
-  }
-
+  
 }

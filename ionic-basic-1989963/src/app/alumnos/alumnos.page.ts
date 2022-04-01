@@ -8,7 +8,7 @@ import { AlumnoService } from '../services/alumno.service';
   styleUrls: ['./alumnos.page.scss'],
 })
 export class AlumnosPage implements OnInit {
-
+  
   alumnos:Alumno[];
   nombre: string;
   matricula: string;
@@ -16,7 +16,7 @@ export class AlumnosPage implements OnInit {
   idActualizar: number;
   error: boolean = false;
   
-  constructor(private alumnoService: AlumnoService) { 
+  constructor( private alumnoService: AlumnoService) { 
 
     this.alumnoService.setAlumnos([
       {id:1, nombre: 'Gerardo Martinez',
@@ -28,7 +28,6 @@ export class AlumnosPage implements OnInit {
     ]);
     this.alumnos = this.alumnoService.getAlumos();
     this.estado ='guardar';
-
 
   }
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Alumno} from '../models/alumno.model';
+import { Alumno } from '../models/alumno.model';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +7,7 @@ import {Alumno} from '../models/alumno.model';
 export class AlumnoService {
 
   private alumnos: Alumno[]=[];
-
+  
   constructor() { }
   
   public agregarAlumno(alumno: Alumno){

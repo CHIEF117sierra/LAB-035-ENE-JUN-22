@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SerciceCService } from '../services/sercice-c.service';
+import { ServicioCService } from '../services/servicio-c.service';
 
 @Component({
   selector: 'app-inicio',
@@ -18,15 +18,16 @@ export class InicioPage implements OnInit {
     {nombre:'Pedro Perez', uuid:"34523452345234523452345", email:"correo@gmail.com"}
   ];
 
-  constructor(private router: Router, private serviceC: SerciceCService) { }
+  constructor(private router: Router,
+    private serviceCService: ServicioCService) { }
 
   ngOnInit() {
   }
 
   gotReceiver(){
-    this.serviceC.sendObjectSource(this.user);
-    this.serviceC.sendListSource(this.list);
-
+    this.serviceCService.sendObjectSource(this.user);
+    this.serviceCService.sendListSource(this.list);
+    
     this.router.navigate(['/reciever']);
   }
 

@@ -67,8 +67,9 @@ export class RecetasService {
       ]
     }
   ];
-
+  
   constructor() { }
+
   getReceta(idReceta: number){
     return {...this.recetas.find(
       (receta: Receta) =>{
